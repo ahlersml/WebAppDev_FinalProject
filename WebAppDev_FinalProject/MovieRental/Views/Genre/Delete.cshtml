@@ -1,0 +1,29 @@
+﻿@namespace GenreSchedule.Models
+
+@model Genre
+
+@{
+    ViewData["Title"] = "Delete Genre";
+}
+
+<h1 class="display-4">Delete Movie Rental</h1>
+<ul class="list-group mb-2">
+    <li class="list-group-item">
+        <h4>@Model?.Title</h4>
+    </li>
+    <li class="list-group-item">
+        <h4>@Model?.genre</h4>
+    </li>
+    <li class="list-group-item">
+        Renter: @Model?.Renter.FullName
+    </li>
+    <li class="list-group-item">
+        Date and Time: @Model?.Date
+    </li>
+</ul>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="GenreId" />
+    <button type="submit" class="btn btn-dark">Delete</button>
+    <a asp-action="Index" asp-controller="Home" class="btn btn-outline-dark">Cancel</a>
+</form>

@@ -1,0 +1,20 @@
+﻿@namespace GenreSchedule.Models
+
+@model Renter
+
+@{
+    ViewData["Title"] = "Delete Genre";
+}
+
+<h1 class="display-4">Delete Renter</h1>
+<ul class="list-group mb-2">
+    <li class="list-group-item">
+        @Model.FullName
+    </li>
+</ul>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="RenterId" />
+    <button type="submit" class="btn btn-dark">Delete</button>
+    <a asp-action="Index" asp-controller="Renter" class="btn btn-outline-dark">Cancel</a>
+</form>
